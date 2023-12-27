@@ -1,0 +1,51 @@
+[package]
+name = "sem-reg"
+version = "0.1.0"
+description = "Handle certain Windows registry binary values semantically. Extensible."
+categories = ["parser-implementations", "os::windows-apis", "api-bindings", "accessibility", "command-line-utilities"]
+keywords = ["microsoft", "windows", "registry", "night-light", "screen-color-temperature", "automation"]
+repository = "https://github.com/Enyium/sem-reg-rs"
+documentation = "https://docs.rs/sem-reg"
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = ["x86_64-pc-windows-msvc", "i686-pc-windows-msvc"]
+
+[[bin]]
+name = "night-light"
+
+[dependencies]
+anyhow = "1.0.75"
+chrono = "0.4.31"
+clap = { version = "4.4.8", features = ["derive"] }
+colored = "2.0.4"
+convert_case = "0.6.0"
+ctrlc = "3.4.1"
+diff = "0.1.13"
+encoding_rs = "0.8.33"
+futures = "0.3.29"
+map-self = "0.1.0"
+serde = { version = "1.0.193", features = ["derive"] }
+serde_json = "1.0.108"
+thiserror = "1.0.50"
+windows = { version = "0.52.0", features = [
+    "Win32_Foundation",
+    "Win32_Security_Authorization",
+    "Win32_Security",
+    "Win32_System_Console",
+    "Win32_System_SystemServices",
+    "Win32_System_Threading",
+] }
+windows-helpers = { version = "0.4.2", features = [
+    "windows_v0_52_win32_app",
+    "windows_v0_52_f_Win32_System_Power",
+] }
+winreg = "0.51.0"
+wmi = "0.13.1"
+zerocopy = "0.7.26"
+
+[dev-dependencies]
+anyhow = "1.0.75"
+serial_test = "2.0.0"
