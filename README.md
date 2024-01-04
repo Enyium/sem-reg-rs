@@ -1,5 +1,7 @@
 [<img alt="crates.io" src="https://img.shields.io/crates/v/sem-reg.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/sem-reg)
 
+# `sem-reg`
+
 A Rust library crate for Windows that abstracts binary registry values, so they can be handled semantically.
 
 Currently, these registry values are handled:
@@ -12,14 +14,18 @@ The API isn't stable. Future requirements of handling other registry values or m
 
 # `night-light` Command Line Program
 
-Allows you to adjust Night Light's active-state, color temperature, preview state and schedule. Corrects Windows bugs like warm color temperature being reset to cold after turning the screen back on. There are also a few extra commands, like for exporting the registry values.
+- Allows you to adjust Night Light's active-state, color temperature, preview state and schedule.
+- Corrects Windows bugs like warm color temperature being reset to cold after turning the screen back on.
+- Allows for gamma correction for a more uniform color temperature transition.
+- There are also a few extra subcommands, like for exporting the registry values.
+- The most sophisticated Night Light tool out there. Make sure to read the help of the subcommands.
 
 Binaries are available on the [releases page](https://github.com/Enyium/sem-reg-rs/releases). Not every version may be provided there.
 
-To install the newest version, first install [Rust](https://www.rust-lang.org/) to get `cargo`; then run:
+To install the newest version, first install [Rust](https://www.rust-lang.org/) to get `cargo`, then run:
 
 ```
-cargo install --bin night-light sem-reg
+cargo install sem-reg --bin night-light
 ```
 
 This will also automatically make it available in the `PATH`.
