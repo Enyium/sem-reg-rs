@@ -173,6 +173,7 @@ fn main() -> anyhow::Result<()> {
                                         || unsafe {
                                             RegisterPowerSettingNotification(
                                                 HANDLE(hwnd.0),
+                                                //TODO: Use `GUID_SESSION_DISPLAY_STATUS` instead? See <https://learn.microsoft.com/en-us/windows/win32/power/power-setting-guids#guid_session_display_status>. (Mind other occurrences besides this one.)
                                                 &GUID_CONSOLE_DISPLAY_STATE,
                                                 //TODO: See <https://github.com/microsoft/win32metadata/issues/1779>.
                                                 DEVICE_NOTIFY_WINDOW_HANDLE.0,

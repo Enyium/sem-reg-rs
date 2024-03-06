@@ -1,6 +1,6 @@
 [package]
 name = "sem-reg"
-version = "0.1.0"
+version = "0.1.1"
 description = "Handle certain Windows registry binary values semantically. Extensible."
 categories = ["parser-implementations", "os::windows-apis", "api-bindings", "accessibility", "command-line-utilities"]
 keywords = ["windows", "registry", "night-light", "color-temperature", "automation"]

@@ -4,7 +4,7 @@
 //!
 //! - Changing schedule-related settings - written to the settings registry value - may entail the state registry value - incl. the active-state - being changed by the OS. Trying to change both the settings and state registry value in close temporal proximity in an irreconcilable way may lead to one not being applied.
 //! - Night preview must not be switched or held active while changing anything that may potentially switch the active-state (incl. schedule-related settings).
-//! - After logging on to the OS, changing the color temperature on its own remains ineffective if preview mode wasn't at least once activated in the session. (Briefly activating is also restores the color temperature after turning the screen back on.) If Night Light is off, changing the temperature and then, not in very close temporal proximity, turning Night Light on, correctly applies the temperature in that instance, however.
+//! - After logging on to the OS, changing the color temperature on its own remains ineffective if preview mode wasn't at least once activated in the session. (Briefly activating it also restores the color temperature after turning the screen back on.) If Night Light is off, changing the temperature and then, not in very close temporal proximity, turning Night Light on, correctly applies the temperature in that instance, however.
 //!
 //! With all types, there can be race conditions when simultaneously changing the Night Light settings elsewhere in the system. This is why you should read, mutate and write without delays in between. `NightLight` instances expire after a short duration to enforce this.
 //!
